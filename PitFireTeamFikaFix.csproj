@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>PitFireTeamFikaFix</AssemblyName>
+    <RootNamespace>PitFireTeamFikaFix</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Version>0.2.0</Version>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
+    <Product>Pit Fire Team Fika Fix</Product>
+    <Description>Fika coop compatibility for Pit Fire Team: host-only spawn, CreateBot dedupe</Description>
+    <Charset>utf-8</Charset>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TarkovDir Condition="'$(TarkovDir)' == ''">U:\Games\EscapeFromTarkov4\</TarkovDir>
+    <CursorModdingDir>$(TarkovDir)CURSORAIMODING\</CursorModdingDir>
+    <TarkovManagedDir>$(TarkovDir)EscapeFromTarkov_Data\Managed\</TarkovManagedDir>
+    <TarkovBepInExCoreDir>$(TarkovDir)BepInEx\core\</TarkovBepInExCoreDir>
+    <GameRefsDir>$(CursorModdingDir)game-assembly-base\05-reference-dlls\</GameRefsDir>
+    <FikaCoreDll>$(TarkovDir)BepInEx\plugins\Fika\Fika.Core.dll</FikaCoreDll>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(TarkovBepInExCoreDir)0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(TarkovBepInExCoreDir)BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(GameRefsDir)Assembly-CSharp-remapped.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Comfort">
+      <HintPath>$(TarkovManagedDir)Comfort.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Fika.Core">
+      <HintPath>$(FikaCoreDll)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(TarkovManagedDir)UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(TarkovManagedDir)UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src\PluginInfo.cs" />
+    <Compile Include="src\PluginCore.cs" />
+    <Compile Include="src\FikaSession.cs" />
+    <Compile Include="src\SpawnProfileGuard.cs" />
+    <Compile Include="src\ClientProfileSpawnTracker.cs" />
+    <Compile Include="src\ClientGhostReconcile.cs" />
+    <Compile Include="src\Patches\HostOnlySpawnPatch.cs" />
+    <Compile Include="src\Patches\CreateBotDedupePatch.cs" />
+    <Compile Include="src\Patches\DebugSpawnGuardPatch.cs" />
+    <Compile Include="src\Patches\ClientSpawnGuardPatch.cs" />
+    <Compile Include="src\Patches\ClientQueueProfileDedupePatch.cs" />
+    <Compile Include="src\Patches\CoopRaidCleanupPatch.cs" />
+    <Compile Include="src\Patches\ClientObservedPlayerDedupePatch.cs" />
+    <Compile Include="src\PitFireTeamReflection.cs" />
+    <Compile Include="src\Networking\PitFireRecruitPackets.cs" />
+    <Compile Include="src\Networking\PitFireRecruitBridge.cs" />
+    <Compile Include="src\Patches\ClientCooperationUiPatch.cs" />
+    <Compile Include="src\Patches\ClientRecruitPhrasePatch.cs" />
+  </ItemGroup>
+
+</Project>
