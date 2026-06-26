@@ -17,7 +17,7 @@ git init
 git add .
 git commit -m "Source backup Pit Fire Team Fika Fix v0.2.1"
 git branch -M main
-git remote add origin https://github.com/${GITHUB_OWNER:-YOUR_GITHUB_USER}/PitFireTeamFikaFix.git
+git remote add origin https://github.com/kabzon93region/PitFireTeamFikaFix.git
 git push -u origin main
 ```
 
