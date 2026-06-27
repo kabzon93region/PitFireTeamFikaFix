@@ -31,10 +31,10 @@ python CURSORAIMODING/tools/publish/publish_github_release.py PitFireTeamFikaFix
 
 Прикрепить zip (только игровые файлы, без INSTALL.md):
 
-`\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host)_v0.2.1_2026-06-26.zip`
+`\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host)_v0.2.1_2026-06-27.zip`
 
 ```powershell
-gh release create v0.2.1 "\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host)_v0.2.1_2026-06-26.zip" ^
+gh release create v0.2.1 "\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host)_v0.2.1_2026-06-27.zip" ^
   --title "Pit Fire Team Fika Fix v0.2.1" ^
   --notes-file CHANGELOG.md
 ```
