@@ -2,15 +2,127 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **GitHub:** [kabzon93region](https://github.com/kabzon93region)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Тонкий BepInEx-патч для coop **Pit Fire Team** + **Fika**. Не заменяет Pit Fire Team.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **GUID:** `com.dematch.pitfireteam-fika`  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Путь:** `BepInEx/plugins/PitFireTeamFikaFix/PitFireTeamFikaFix.dll`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18,13 +130,111 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 | Мод | Путь |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 |-----|------|
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 | Pit Fire Team | `BepInEx/plugins/pitFireTeam/` |
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 | Fika | `BepInEx/plugins/Fika/` |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -32,7 +242,63 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Поставить на **хост и каждого клиента**. В логе на каждом ПК: `v0.1.2 loading (fika=True)`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -40,17 +306,143 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## v0.2.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 - **P1 recruit bridge:** клиент на headless-хосте видит «Cooperation» у observed-ботов и может рекрутить их в рейде
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - UI: `GesturesQuickPanel` postfix для `ObservedPlayer` без `BotOwner`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - RPC `PitFireRecruitRequestPacket` → хост вызывает `TryAskFollowMeRequest` на реальном `BotOwner`
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - FollowMe: хост прокидывает `BotEventHandler.SayPhrase` для ambient-рекрута
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -58,13 +450,111 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - P0: spawn comp только на хосте
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - P2: async-safe dedupe `CreateBot` (ghost-модель)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - Comp клиента в рейде — **v0.2 P1** (рекрут живых ботов; spawn comp — в планах)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - Метка союзника на карте у клиента без comp — ожидаемо до P1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,16 +562,128 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```powershell
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 python pack_pitfireteam_fikafix.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Поддержать проект
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Разовый донат картой РФ, СБП, ЮMoney, VK Pay:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **[DonationAlerts → kabzon93region](https://www.donationalerts.com/r/kabzon93region)**
