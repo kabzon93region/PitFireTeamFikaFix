@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -7,9 +7,9 @@
     <LangVersion>latest</LangVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <Version>0.2.0</Version>
-    <AssemblyVersion>0.2.0.0</AssemblyVersion>
-    <FileVersion>0.2.0.0</FileVersion>
+    <Version>0.2.2</Version>
+    <AssemblyVersion>0.2.2.0</AssemblyVersion>
+    <FileVersion>0.2.2.0</FileVersion>
     <Product>Pit Fire Team Fika Fix</Product>
     <Description>Fika coop compatibility for Pit Fire Team: host-only spawn, CreateBot dedupe</Description>
     <Charset>utf-8</Charset>
@@ -79,6 +79,8 @@
     <Compile Include="src\Networking\PitFireRecruitBridge.cs" />
     <Compile Include="src\Patches\ClientCooperationUiPatch.cs" />
     <Compile Include="src\Patches\ClientRecruitPhrasePatch.cs" />
+    <Compile Include="src\CompanionGuard.cs" />
+    <Compile Include="src\Patches\CompanionLeaveGuardPatch.cs" />
   </ItemGroup>
 
 </Project>

@@ -37,8 +37,10 @@ namespace PitFireTeamFikaFix
             var raidCleanup = CoopRaidCleanupPatch.TryApply(_harmony, FixLogger);
             var debugGuard = DebugSpawnGuardPatch.TryApply(_harmony, FixLogger);
 
+            var companionGuard = CompanionLeaveGuardPatch.TryApply(_harmony, FixLogger);
+
             if (!hostOnlySpawn && !clientSpawnGuard && !clientQueueDedupe
-                && !observedDedupe && !createBotDedupe && !raidCleanup && !debugGuard)
+                && !observedDedupe && !createBotDedupe && !raidCleanup && !debugGuard && !companionGuard)
             {
                 FixLogger.LogWarning("[PITFIRE_FIKA] No patches applied (pitFireTeam / Fika host API missing?)");
             }

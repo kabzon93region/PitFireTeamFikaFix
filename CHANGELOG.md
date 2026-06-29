@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.2 (2026-06-28)
+
+- **CompanionGuard:** публичный API `PitFireTeamFikaFix.CompanionGuard` — проверка компаньонов Pit Fire Team по `BossPlayers.IsFollower`.
+- **CompanionLeaveGuardPatch:** `ZoneLeaveControllerClass.LeaveAll()` не снимает последователей отряда (защита от массового сброса ботов, в т.ч. BossSpawnControl).
+
 ## v0.2.1 (2026-06-12)
 
 - **Rollback:** отключены патчи recruit bridge v0.2.0 (`GesturesQuickPanel`, `Player.Say`, `PitFireRecruitRequestPacket`)
