@@ -38,6 +38,10 @@ namespace PitFireTeamFikaFix
             var debugGuard = DebugSpawnGuardPatch.TryApply(_harmony, FixLogger);
 
             var companionGuard = CompanionLeaveGuardPatch.TryApply(_harmony, FixLogger);
+            if (!companionGuard)
+            {
+                FixLogger.LogInfo("[PITFIRE_FIKA] CompanionLeaveGuard deferred — will retry after pitFireTeam init");
+            }
 
             if (!hostOnlySpawn && !clientSpawnGuard && !clientQueueDedupe
                 && !observedDedupe && !createBotDedupe && !raidCleanup && !debugGuard && !companionGuard)
@@ -45,7 +49,28 @@ namespace PitFireTeamFikaFix
                 FixLogger.LogWarning("[PITFIRE_FIKA] No patches applied (pitFireTeam / Fika host API missing?)");
             }
 
-            FixLogger.LogInfo("[PITFIRE_FIKA] Load complete (spawn/dedupe v0.2.1 — recruit bridge disabled)");
+            FixLogger.LogInfo("[PITFIRE_FIKA] Load complete (spawn/dedupe v0.2.3 — companion guard AIBossPlayer fix)");
+        }
+
+        private bool _companionGuardRetryDone;
+
+        private void Update()
+        {
+            if (_companionGuardRetryDone || _harmony == null)
+            {
+                return;
+            }
+
+            if (!PitFireTeamReflection.ProbeDiagnostics(out var probe))
+            {
+                return;
+            }
+
+            _companionGuardRetryDone = true;
+            if (CompanionLeaveGuardPatch.TryApply(_harmony, FixLogger))
+            {
+                FixLogger.LogInfo($"[PITFIRE_FIKA] CompanionLeaveGuard applied on retry ({probe})");
+            }
         }
         private void OnDestroy()
         {

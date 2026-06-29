@@ -9,8 +9,15 @@ namespace PitFireTeamFikaFix.Patches
     /// </summary>
     internal static class CompanionLeaveGuardPatch
     {
+        private static bool _applied;
+
         internal static bool TryApply(Harmony harmony, BepInEx.Logging.ManualLogSource logger)
         {
+            if (_applied)
+            {
+                return true;
+            }
+
             if (!PitFireTeamReflection.IsAvailable())
             {
                 logger.LogInfo("[PITFIRE_FIKA] CompanionLeaveGuard skipped (pitFireTeam not loaded)");
@@ -26,6 +33,7 @@ namespace PitFireTeamFikaFix.Patches
 
             harmony.Patch(leaveAll, prefix: new HarmonyMethod(typeof(CompanionLeaveGuardPatch), nameof(LeaveAllPrefix)));
             logger.LogInfo("[PITFIRE_FIKA] Patched ZoneLeaveControllerClass.LeaveAll (protect PitFire companions)");
+            _applied = true;
             return true;
         }
 

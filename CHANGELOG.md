@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.3 (2026-06-29)
+
+**Подтверждено в тесте:** BossSpawnControl v1.5.4 удаляет обычных AI-ботов, но оставляет боссов и последователей Pit Fire Team.
+
+- **Fix companion detection (pitFireTeam 0.8.4):** `IsFollower(BotOwner, AIBossPlayer)` — `AIBossPlayer` из EFT (global), не `pitTeam.Components.AIBossPlayer` (HarmonyX warning + `IsFollower` always false).
+- Fallbacks: `IsFollowerProfileId`, `GetFollowerByProfileId`, `BotFollower.HaveBoss` + `IsPlayerBoss`.
+- **CompanionLeaveGuardPatch:** retry apply in `Update` when pitFireTeam loads after FikaFix; guard against double-patch.
+- `CompanionGuard.IsAvailable` проверяет наличие `IsFollower` method.
+
 ## v0.2.2 (2026-06-28)
 
 - **CompanionGuard:** публичный API `PitFireTeamFikaFix.CompanionGuard` — проверка компаньонов Pit Fire Team по `BossPlayers.IsFollower`.

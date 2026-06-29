@@ -7,12 +7,13 @@ namespace PitFireTeamFikaFix
     /// </summary>
     public static class CompanionGuard
     {
-        public static bool IsAvailable => PitFireTeamReflection.IsAvailable();
+        public static bool IsAvailable => PitFireTeamReflection.ProbeDiagnostics(out _);
 
         public static bool IsProtectedBot(BotOwner bot) =>
             PitFireTeamReflection.IsFollower(bot);
 
         public static bool IsProtectedProfileId(string profileId) =>
-            PitFireTeamReflection.IsFollowerProfileId(profileId);
+            PitFireTeamReflection.IsFollowerProfileId(profileId)
+            || PitFireTeamReflection.HasFollowerRecord(profileId);
     }
 }

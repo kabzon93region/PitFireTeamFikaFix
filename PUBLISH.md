@@ -2,8 +2,8 @@
 
 **Статус:** `ready`  
 **GitHub:** Release + zip  
-**Версия:** `0.2.2`  
-**Deployment:** `(headless_host)`
+**Версия:** `0.2.3`  
+**Deployment:** `(headless_host,host_client)`
 
 ## 1. Подготовка (уже сделано этим скриптом)
 
@@ -15,7 +15,7 @@
 cd github-repos/PitFireTeamFikaFix
 git init
 git add .
-git commit -m "Source backup Pit Fire Team Fika Fix v0.2.2"
+git commit -m "Source backup Pit Fire Team Fika Fix v0.2.3"
 git branch -M main
 git remote add origin https://github.com/kabzon93region/PitFireTeamFikaFix.git
 git push -u origin main
@@ -31,16 +31,16 @@ python CURSORAIMODING/tools/publish/publish_github_release.py PitFireTeamFikaFix
 
 Прикрепить zip (только игровые файлы, без INSTALL.md):
 
-`\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host)_v0.2.2_2026-06-29.zip`
+`\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host,host_client)_v0.2.3_2026-06-29.zip`
 
 ```powershell
-gh release create v0.2.2 "\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host)_v0.2.2_2026-06-29.zip" ^
-  --title "Pit Fire Team Fika Fix v0.2.2" ^
+gh release create v0.2.3 "\\Servant\data\Games\EscapeFromTarkov4\CURSORAIMODING\releases\PitFireTeamFikaFix_(headless_host,host_client)_v0.2.3_2026-06-29.zip" ^
+  --title "Pit Fire Team Fika Fix v0.2.3" ^
   --notes-file CHANGELOG.md
 ```
 
 ## Описание репозитория (suggested)
 
-Spawn/dedupe PitFireTeam на Fika headless; анти-призрак на клиенте.
+Spawn/dedupe PitFireTeam на Fika host; companion guard для защиты последователей при сбросе ботов.
 
-SPT 4.0 + Fika 2.3 headless stack. Deployment: `(headless_host)`.
+SPT 4.0 + Fika 2.3 headless stack. Deployment: `(headless_host,host_client)`.
